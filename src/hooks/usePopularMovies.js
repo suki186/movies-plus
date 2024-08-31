@@ -10,5 +10,6 @@ export const usePopularMoviesQuery = () => {
   return useQuery({
     queryKey: ["movie-popular"],
     queryFn: fetchPopularMovies,
+    select: (result) => result.data, // data만 가져오기
   });
 };
