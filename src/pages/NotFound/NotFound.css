@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "SDSamliphopangche_Outline";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dovemayo_gothic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 30px;
+}
+
+#notFound-error {
+  font-family: "SDSamliphopangche_Outline", sans-serif;
+  font-size: 30pt;
+  padding: 10px;
+}
+
+#notFound-msg {
+  font-family: "Dovemayo_gothic", sans-serif;
+  padding: 10px;
+}
+
+#notFound-img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
