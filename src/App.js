@@ -5,6 +5,8 @@ import Homepage from "./pages/Homepage/Homepage";
 import MoviePage from "./pages/Movies/MoviePage";
 import MovieDetailPage from "./pages/MovieDetail/MovieDetailPage";
 import NotFound from "./pages/NotFound/NotFound";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import InterestPage from "./pages/Interesting/InterestPage";
 
 // Homepage(메인페이지) /
 // MoviePage(영화전체페이지, 검색, 카테고리별) /movies
@@ -15,7 +17,7 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           {/* 부모의 path를 그대로 쓰려면 index */}
@@ -24,6 +26,8 @@ function App() {
           <Route path="movies">
             <Route index element={<MoviePage />}></Route>
             <Route path=":id" element={<MovieDetailPage />}></Route>
+            <Route path="search" element={<SearchPage />}></Route>
+            <Route path="interest" element={<InterestPage />}></Route>
           </Route>
         </Route>
 
