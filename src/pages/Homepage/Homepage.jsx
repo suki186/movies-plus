@@ -1,6 +1,7 @@
 import React from "react";
 import "./Homepage.css";
 import Banner from "./components/Banner/Banner";
+import PopularMovieSlide from "./components/PopularMovieSlide/PopularMovieSlide";
 
 //1. 배너
 //2. 인기있는 영화
@@ -12,6 +13,7 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <Banner />
+      <PopularMovieSlide />
     </div>
   );
 };
