@@ -17,13 +17,15 @@ const AppLayout = () => {
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" className="logo-img" />
           </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="navbarScroll">
             <FontAwesomeIcon icon={faBars} style={{ color: "#ffffff" }} />
           </Navbar.Toggle>
+
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
+              style={{ maxHeight: "none" }}
               navbarScroll
             >
               <Nav.Link href="/">홈</Nav.Link>

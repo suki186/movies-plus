@@ -1,5 +1,8 @@
 .navbar {
   background-color: black;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .logo-img {
