@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../media/logo.png";
-import "./AppLayout.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar, Form, Button } from "react-bootstrap";
 
@@ -11,7 +10,7 @@ import { Outlet } from "react-router-dom"; // 라우터 안 자손들 가져옴
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className="applayout">
       <Navbar expand="lg" className="navbar" variant="dark">
         <Container fluid>
           <Navbar.Brand href="/">
@@ -23,17 +22,11 @@ const AppLayout = () => {
           </Navbar.Toggle>
 
           <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "none" }}
-              navbarScroll
-            >
+            <Nav className="me-auto my-2 my-lg-0" navbarScroll>
               <Nav.Link href="/">홈</Nav.Link>
               <Nav.Link href="/movies/search">검색</Nav.Link>
               <Nav.Link href="/movies/interest">관심 콘텐츠</Nav.Link>
               <Nav.Link href="/movies">영화</Nav.Link>
-              <Nav.Link href="/">시리즈</Nav.Link>
-              <Nav.Link href="/">오리지널</Nav.Link>
             </Nav>
 
             <Form className="d-flex">

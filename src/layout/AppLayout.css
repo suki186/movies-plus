@@ -1,19 +1,1 @@
-.navbar {
-  background-color: black;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-}
 
-.logo-img {
-  height: 40px;
-  width: 75px;
-  margin-left: 15px;
-}
-
-/* 반응형 */
-@media screen and (max-width: 63rem) {
-  .logo-img {
-    margin-left: 5px;
-  }
-}

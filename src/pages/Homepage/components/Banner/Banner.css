@@ -37,7 +37,7 @@
 }
 
 #p-date {
-  margin: 5;
+  margin: 10px;
   font-size: 0.8em;
 }
 
@@ -52,6 +52,15 @@
   .banner {
     height: 25vh;
     background-size: contain;
+  }
+
+  .banner::before {
+    content: "";
+    background: linear-gradient(to top, rgb(20, 29, 49), transparent);
+    position: absolute;
+    left: 0;
+    height: 25vh;
+    width: 100%;
   }
 
   .banner-text h1 {
