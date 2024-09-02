@@ -1,6 +1,6 @@
 import React from "react";
 import "../PopularMovieSlide/PopularMovieSlide.css";
-import { useTopRatedMoviesQuery } from "../../../../hooks/useTopRatedMovies";
+import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomingMovies";
 import { Alert } from "react-bootstrap";
 
 import Carousel from "react-multi-carousel";
@@ -22,8 +22,8 @@ const responsive = {
   },
 };
 
-const TopRatingMovieSlide = () => {
-  const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
+const UpcomingMovieSlide = () => {
+  const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
 
   if (isLoading) {
     // 로딩스피너
@@ -35,7 +35,7 @@ const TopRatingMovieSlide = () => {
   }
   return (
     <div>
-      <h3>놓칠 수 없는 히트 영화 모음</h3>
+      <h3>디즈니+ 최신작</h3>
       <Carousel
         draggable={false}
         infinite={false} // 무한반복
@@ -52,4 +52,4 @@ const TopRatingMovieSlide = () => {
   );
 };
 
-export default TopRatingMovieSlide;
+export default UpcomingMovieSlide;

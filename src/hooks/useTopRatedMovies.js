@@ -1,4 +1,4 @@
-// Popular Movie api 호출
+// Top Rated Movie api 호출
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
@@ -6,7 +6,7 @@ const fetchTopRatedMovies = () => {
   return api.get(`/movie/top_rated`); // baseURL 제외
 };
 
-export const usePopularMoviesQuery = () => {
+export const useTopRatedMoviesQuery = () => {
   return useQuery({
     queryKey: ["movie-toprate"],
     queryFn: fetchTopRatedMovies,
