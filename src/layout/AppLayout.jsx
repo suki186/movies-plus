@@ -27,6 +27,8 @@ const AppLayout = () => {
               <Nav.Link href="/movies/search">검색</Nav.Link>
               <Nav.Link href="/movies/interest">관심 콘텐츠</Nav.Link>
               <Nav.Link href="/movies">영화</Nav.Link>
+              <Nav.Link href="/">시리즈</Nav.Link>
+              <Nav.Link href="/">오리지널</Nav.Link>
             </Nav>
 
             <Form className="d-flex">

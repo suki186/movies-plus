@@ -21,7 +21,7 @@ const Banner = () => {
   return (
     <div className="carousel">
       <Carousel indicators={false}>
-        {data?.results.slice(0, 10).map((item, index) => (
+        {data?.results.slice(0, 5).map((item, index) => (
           <Carousel.Item key={index} className="carousel-item">
             <div
               className="banner"

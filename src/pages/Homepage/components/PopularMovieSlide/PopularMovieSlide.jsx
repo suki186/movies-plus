@@ -1,4 +1,5 @@
 import React from "react";
+import "./PopularMovieSlide.css";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import { Alert } from "react-bootstrap";
 
