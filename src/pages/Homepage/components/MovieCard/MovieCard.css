@@ -61,8 +61,47 @@
   margin-bottom: 30px;
 }
 
-.img-info {
+.img-info1,
+.img-info2 {
   display: flex;
   align-items: center;
   gap: 3px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 63rem) {
+  /* 약 1008px 이하 */
+  .movie-card {
+    width: 154px; /* 카드 폭을 줄입니다 */
+    height: 231px; /* 카드 높이를 줄입니다 */
+  }
+
+  .carousel-container {
+    height: 250px;
+  }
+
+  .overlay h1 {
+    font-size: 22px; /* 제목 폰트 크기 조정 */
+    padding: 3px;
+  }
+
+  .overlay img {
+    width: 18px; /* 이미지 크기 조정 */
+    height: 18px; /* 이미지 크기 조정 */
+  }
+
+  .category {
+    gap: 6px; /* 카테고리 아이템 간격을 줄입니다 */
+    margin: 4px; /* 카테고리 마진 조정 */
+    margin-bottom: 20px; /* 카테고리 하단 마진 조정 */
+    flex-wrap: wrap;
+  }
+
+  .img-info1 {
+    display: none;
+  }
+
+  .img-info2 {
+    gap: 5px; /* 이미지와 텍스트 간의 간격 조정 */
+  }
 }

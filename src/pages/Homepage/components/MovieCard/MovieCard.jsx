@@ -29,12 +29,12 @@ const MovieCard = ({ movie }) => {
           ))}
         </div>
 
-        <div className="img-info">
+        <div className="img-info1">
           <img src={date} alt="date" />
           {movie?.release_date?.slice(0, 7)}
         </div>
 
-        <div className="img-info">
+        <div className="img-info2">
           <img src={rating} alt="vote" />
           {movie?.vote_average?.toFixed(1)}
         </div>
