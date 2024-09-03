@@ -5,7 +5,6 @@ import Homepage from "./pages/Homepage/Homepage";
 import MoviePage from "./pages/Movies/MoviePage";
 import MovieDetailPage from "./pages/MovieDetail/MovieDetailPage";
 import NotFound from "./pages/NotFound/NotFound";
-import SearchPage from "./pages/SearchPage/SearchPage";
 import InterestPage from "./pages/Interesting/InterestPage";
 
 // Homepage(메인페이지) /
@@ -26,7 +25,6 @@ function App() {
           <Route path="movies">
             <Route index element={<MoviePage />}></Route>
             <Route path=":id" element={<MovieDetailPage />}></Route>
-            <Route path="search" element={<SearchPage />}></Route>
             <Route path="interest" element={<InterestPage />}></Route>
           </Route>
         </Route>

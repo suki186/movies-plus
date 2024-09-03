@@ -1,1 +1,46 @@
+.navbar {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
 
+.logo-img {
+  height: 40px;
+  width: 75px;
+  margin-left: 15px;
+}
+
+.d-flex {
+  width: 320px;
+}
+
+.me-2 {
+  border: none !important;
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #b8b8b8 !important; /* 아래쪽 테두리 추가 */
+  border-radius: 0 !important;
+  color: white !important;
+
+  &:focus {
+    border-bottom: 1px solid #895bff !important;
+  }
+}
+
+.me-2::placeholder {
+  color: #b8b8b8 !important;
+}
+
+.search-btn {
+  border: none !important;
+  border-radius: 50% !important;
+}
+
+/* 반응형 */
+@media screen and (max-width: 63rem) {
+  .logo-img {
+    margin-left: 5px;
+  }
+}
