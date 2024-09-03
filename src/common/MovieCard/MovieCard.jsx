@@ -2,10 +2,10 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import "./MovieCard.css";
-import nineteen from "../../../../media/nineteen.png";
-import twelve from "../../../../media/twelve.png";
-import date from "../../../../media/date.png";
-import rating from "../../../../media/rating.png";
+import nineteen from "../../media/nineteen.png";
+import twelve from "../../media/twelve.png";
+import date from "../../media/date.png";
+import rating from "../../media/rating.png";
 
 const MovieCard = ({ movie }) => {
   const imgSrc = movie?.adult ? nineteen : twelve;

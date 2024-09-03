@@ -1,26 +1,9 @@
 import React from "react";
-import "../PopularMovieSlide/PopularMovieSlide.css";
 import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomingMovies";
 import { Alert } from "react-bootstrap";
 
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import MovieCard from "../MovieCard/MovieCard";
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 2,
-  },
-};
+import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
+import { responsive } from "../../../../constants/responsive";
 
 const UpcomingMovieSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
@@ -35,19 +18,11 @@ const UpcomingMovieSlide = () => {
   }
   return (
     <div>
-      <h3>디즈니+ 최신작</h3>
-      <Carousel
-        draggable={false}
-        infinite={false} // 무한반복
-        centerMode={true}
-        itemClass="movie-slider p-1"
-        containerClass="carousel-container"
+      <MovieSlider
+        title="디즈니+ 최신작"
+        movies={data.results}
         responsive={responsive}
-      >
-        {data.results?.map((movie, index) => (
-          <MovieCard movie={movie} key={index} />
-        ))}
-      </Carousel>
+      />
     </div>
   );
 };
