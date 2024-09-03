@@ -51,7 +51,7 @@
 @media screen and (max-width: 63rem) {
   .banner {
     height: 25vh;
-    background-size: contain;
+    background-size: 100%;
   }
 
   .banner::before {

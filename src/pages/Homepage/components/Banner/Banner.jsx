@@ -26,7 +26,7 @@ const Banner = () => {
             <div
               className="banner"
               style={{
-                backgroundImage: `url(https://media.themoviedb.org/t/p/w533_and_h300_bestv2${item.poster_path})`,
+                backgroundImage: `url(https://media.themoviedb.org/t/p/original${item.poster_path})`,
               }}
             >
               <div className="banner-text">
