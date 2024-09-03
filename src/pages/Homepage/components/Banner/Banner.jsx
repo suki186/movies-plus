@@ -2,7 +2,7 @@ import React from "react";
 import "./Banner.css";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import Alert from "react-bootstrap/Alert";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Banner = () => {
@@ -11,7 +11,15 @@ const Banner = () => {
 
   if (isLoading) {
     // 로딩스피너
-    return <h1>Loading...</h1>;
+    return (
+      <div>
+        <Spinner
+          animation="border"
+          variant="danger"
+          style={{ width: "3rem", height: "3rem" }}
+        />
+      </div>
+    );
   }
   if (isError) {
     // 에러 메세지
