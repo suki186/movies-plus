@@ -1,0 +1,90 @@
+.no-results {
+  background-color: rgba(132, 132, 132, 0.5);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.retry-btn {
+  background-color: transparent; /* 투명 배경 */
+  color: white;
+  border: 2px solid white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.page-item {
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+.page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: rgba(88, 88, 88, 0.5);
+  font-size: 1rem;
+  color: white;
+}
+
+/* 이전 페이지와 다음 페이지 버튼 스타일 */
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  width: 5rem;
+  height: 2.5rem;
+  background-color: rgba(132, 132, 132, 0.5);
+  font-size: 10px;
+  border-radius: 1.5rem;
+}
+
+/* 반응형 */
+@media screen and (max-width: 63rem) {
+  .page-link {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    width: 3rem;
+    height: 2rem;
+    font-size: 7px;
+    border-radius: 1rem;
+  }
+
+  .no-results {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+
+  .pagination {
+    padding: 0.75rem 0;
+  }
+
+  .page-item {
+    margin: 0 0.125rem;
+  }
+}

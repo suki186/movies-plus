@@ -6,6 +6,8 @@ import nineteen from "../../media/nineteen.png";
 import twelve from "../../media/twelve.png";
 import date from "../../media/date.png";
 import rating from "../../media/rating.png";
+import noPoster from "../../media/noPoster.png";
+
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 
 const MovieCard = ({ movie }) => {
@@ -26,10 +28,11 @@ const MovieCard = ({ movie }) => {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w220_and_h330_bestv2${movie?.poster_path}` +
-          ")",
+        backgroundImage: `url(${
+          movie?.poster_path
+            ? `https://media.themoviedb.org/t/p/w220_and_h330_bestv2${movie.poster_path}`
+            : `${noPoster}`
+        })`,
       }}
       className="movie-card"
     >
