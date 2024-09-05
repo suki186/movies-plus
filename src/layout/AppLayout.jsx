@@ -23,7 +23,7 @@ const AppLayout = () => {
 
   return (
     <div className="applayout">
-      <Navbar expand="lg" className="navbar" variant="dark">
+      <Navbar expand="sm" className="navbar" variant="dark">
         <Container fluid>
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" className="logo-img" />

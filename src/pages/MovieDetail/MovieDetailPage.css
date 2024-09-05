@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "KCC-Ganpan";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.information {
+  position: absolute;
+
+  padding: 20px;
+
+  left: 12px; /* 왼쪽에 위치 */
+
+  bottom: 12px; /* 아래쪽 끝까지 확장 */
+}
+
+.container {
+  font-family: "KCC-Ganpan", sans-serif;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+.detail-tagline {
+  font-size: 20px;
+}
+
+.detail-btn {
+  margin-top: 30px;
+}
+
+.detail-poster {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.card-adult {
+  margin: 10px 0px;
+}
+.card-adult img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.detail-info {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.detail-info .detail-item:not(:last-child)::after {
+  content: " •";
+  color: white;
+}
+
+.movie-genre {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.jjim {
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 45rem) {
+  .detail-poster {
+    margin-top: 5px;
+  }
+
+  .movie-genre {
+    display: none;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .detail-tagline {
+    font-size: 8px;
+  }
+
+  .detail-btn {
+    margin-top: 10px;
+  }
+
+  .detail-btn Button {
+    width: 70px;
+    height: 30px;
+    font-size: 10px;
+  }
+  .jjim {
+    font-size: 10px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .detail-info {
+    font-size: 10px;
+  }
+
+  .card-adult {
+    display: none;
+  }
+}

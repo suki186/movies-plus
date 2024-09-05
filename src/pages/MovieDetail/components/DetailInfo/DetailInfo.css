@@ -1,0 +1,38 @@
+/* DetailInfo.css */
+
+h1 {
+  margin-top: 20px;
+}
+
+.overview {
+  font-size: 15px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 70px 20px;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 4px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.detail-table img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 45rem) {
+  .detail-table {
+    margin: 20px 0px;
+  }
+
+  .overview {
+    font-size: 10px;
+  }
+}

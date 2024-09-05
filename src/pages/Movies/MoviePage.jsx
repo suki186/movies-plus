@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MoviePage.css";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
@@ -28,6 +28,11 @@ const MoviePage = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
+
+  // 검색을 다시하면 페이지가 1로
+  useEffect(() => {
+    setPage(1);
+  }, [keyword]);
 
   if (isLoading) {
     // 로딩스피너

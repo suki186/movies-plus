@@ -9,10 +9,12 @@ import rating from "../../media/rating.png";
 import noPoster from "../../media/noPoster.png";
 
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const imgSrc = movie?.adult ? nineteen : twelve;
   const { data: genreData } = useMovieGenreQuery(); // data이름 재정의
+  const navigate = useNavigate();
 
   const showGenre = (genreIdList) => {
     if (!genreData) return []; // 데이터가 없다면 보여주지 않기
@@ -25,6 +27,11 @@ const MovieCard = ({ movie }) => {
     return genreNameList;
   };
 
+  // 카드를 누르면 MovieDetailPage로 이동
+  const goToMovieDetailPage = (id) => {
+    navigate(`/movies/${id}`);
+  };
+
   return (
     <div
       style={{
@@ -35,6 +42,7 @@ const MovieCard = ({ movie }) => {
         })`,
       }}
       className="movie-card"
+      onClick={() => goToMovieDetailPage(movie.id)}
     >
       <div className="overlay">
         <h1>{movie?.title}</h1>
