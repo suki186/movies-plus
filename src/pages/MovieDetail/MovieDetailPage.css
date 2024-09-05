@@ -13,6 +13,15 @@
   overflow: hidden;
 }
 
+.background::before {
+  content: "";
+  background: linear-gradient(to top, rgb(20, 29, 49), transparent);
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+}
+
 .information {
   position: absolute;
 

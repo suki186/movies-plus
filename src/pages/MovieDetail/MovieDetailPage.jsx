@@ -13,6 +13,7 @@ import {
 
 import { useMovieDetailQuery } from "../../hooks/useMovieDetail";
 import DetailInfo from "./components/DetailInfo/DetailInfo";
+import DetailReview from "./components/DetailReview/DetailReview";
 
 import nineteen from "../../media/nineteen.png";
 import twelve from "../../media/twelve.png";
@@ -104,6 +105,7 @@ const MovieDetailPage = () => {
 
           <Col xs={12}>
             <DetailInfo id={id} />
+            <DetailReview />
           </Col>
         </Row>
       </Container>
