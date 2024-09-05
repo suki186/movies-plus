@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MovieDetailPage.css";
 import { useParams } from "react-router-dom";
+import YouTube from "react-youtube";
 import {
   Spinner,
   Alert,
@@ -9,9 +10,11 @@ import {
   Col,
   Button,
   Badge,
+  Modal,
 } from "react-bootstrap";
 
 import { useMovieDetailQuery } from "../../hooks/useMovieDetail";
+import { useMovieYoutubeQuery } from "../../hooks/useMovieYoutube";
 import DetailInfo from "./components/DetailInfo/DetailInfo";
 import DetailReview from "./components/DetailReview/DetailReview";
 
@@ -21,12 +24,38 @@ import noPoster2 from "../../media/noPoster2.png";
 import cc from "../../media/cc.png";
 import hd from "../../media/hd.png";
 
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter" className="modal-title">
+          YouTube 예고편
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <YouTube
+          videoId={props.videoId} // defaults -> ''
+        />
+      </Modal.Body>
+    </Modal>
+  );
+}
+
 const MovieDetailPage = () => {
   const id = useParams();
   const { data, isLoading, isError, error } = useMovieDetailQuery(id);
-  console.log("Data", data);
+  //console.log("Data", data);
+  const { data: youtubeData } = useMovieYoutubeQuery(id);
+  //console.log("yyy", youtubeData);
 
   const imgSrc = data?.adult ? nineteen : twelve;
+  const [modalShow, setModalShow] = useState(false);
+  const videoId = youtubeData?.results?.[0]?.key;
 
   if (isLoading) {
     // 로딩스피너
@@ -44,6 +73,7 @@ const MovieDetailPage = () => {
     // 에러 메세지
     return <Alert variant="danger">{error.message}</Alert>;
   }
+
   return (
     <div>
       <Container>
@@ -94,7 +124,14 @@ const MovieDetailPage = () => {
                 <div className="detail-tagline">{data?.tagline}</div>
 
                 <div className="detail-btn">
-                  <Button variant="light">▶ 예고편</Button>
+                  <Button variant="light" onClick={() => setModalShow(true)}>
+                    ▶ 예고편
+                  </Button>
+                  <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    videoId={videoId}
+                  />
                   <Button variant="secondary" className="jjim">
                     +
                   </Button>
