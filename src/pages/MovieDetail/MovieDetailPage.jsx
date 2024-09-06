@@ -17,6 +17,7 @@ import { useMovieDetailQuery } from "../../hooks/useMovieDetail";
 import { useMovieYoutubeQuery } from "../../hooks/useMovieYoutube";
 import DetailInfo from "./components/DetailInfo/DetailInfo";
 import DetailReview from "./components/DetailReview/DetailReview";
+import RecommendMovie from "./components/RecommedMovie/RecommendMovie";
 
 import nineteen from "../../media/nineteen.png";
 import twelve from "../../media/twelve.png";
@@ -25,10 +26,15 @@ import cc from "../../media/cc.png";
 import hd from "../../media/hd.png";
 
 function MyVerticallyCenteredModal(props) {
+  const opts = {
+    height: "300",
+    width: "470",
+  };
+
   return (
     <Modal
       {...props}
-      size="lg"
+      className="custom-modal"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -38,9 +44,13 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <YouTube
-          videoId={props.videoId} // defaults -> ''
-        />
+        <div className="youtube-video-wrapper">
+          <YouTube
+            videoId={props.videoId}
+            opts={opts}
+            className="youtube-video"
+          />
+        </div>
       </Modal.Body>
     </Modal>
   );
@@ -141,7 +151,11 @@ const MovieDetailPage = () => {
           </Col>
 
           <Col xs={12}>
+            {/* 상세정보 */}
             <DetailInfo id={id} />
+            {/* 추천영화 */}
+            <RecommendMovie />
+            {/* 리뷰 */}
             <DetailReview />
           </Col>
         </Row>

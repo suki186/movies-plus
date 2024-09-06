@@ -3,7 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./MoviePage.css";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
+import {
+  Alert,
+  Col,
+  Container,
+  Row,
+  Spinner,
+  ButtonGroup,
+  Dropdown,
+  DropdownButton,
+} from "react-bootstrap";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 
@@ -71,8 +80,19 @@ const MoviePage = () => {
     <Container>
       <Row>
         <Col xs={12} lg={4}>
-          filter
+          <DropdownButton
+            as={ButtonGroup}
+            key={"Secondary"}
+            id={`dropdown-variants-${"Secondary"}`}
+            //variant={"Secondary".toLowerCase()}
+            title={"정렬"}
+            className="dropdown-sort"
+          >
+            <Dropdown.Item eventKey="1">인기 높은 순</Dropdown.Item>
+            <Dropdown.Item eventKey="2">인기 낮은 순</Dropdown.Item>
+          </DropdownButton>
         </Col>
+
         <Col xs={12} lg={8}>
           <Row>
             {data?.results.map((movie, index) => (

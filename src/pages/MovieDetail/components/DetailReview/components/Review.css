@@ -52,3 +52,26 @@
     text-decoration: underline;
   }
 }
+
+/* 반응형 */
+@media screen and (max-width: 45rem) {
+  .review-container {
+    border: 2px solid rgb(61, 183, 204);
+    padding: 10px;
+  }
+
+  .author {
+    font-size: 17px;
+  }
+
+  .content {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .toggle-button {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+}

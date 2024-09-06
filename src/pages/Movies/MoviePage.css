@@ -48,6 +48,12 @@
   color: white;
 }
 
+/* DropDown */
+.dropdown-sort {
+  background-color: none !important;
+  border-radius: 0 !important;
+}
+
 /* 이전 페이지와 다음 페이지 버튼 스타일 */
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {

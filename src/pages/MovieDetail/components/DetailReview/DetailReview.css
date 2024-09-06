@@ -13,3 +13,16 @@
     text-decoration: underline;
   }
 }
+
+.review-h1 {
+  margin-left: 10px;
+  color: rgb(61, 183, 204);
+}
+
+/* 반응형 */
+@media screen and (max-width: 45rem) {
+  .showReviews {
+    font-size: 0.7rem;
+    margin-left: 5px;
+  }
+}

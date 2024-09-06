@@ -35,7 +35,7 @@ const DetailReview = () => {
 
   return (
     <div>
-      <h1 style={{ color: "rgb(61,183,204)" }}>
+      <h1 className="review-h1">
         Reviews{" "}
         <button className="showReviews" onClick={handleShowReviews}>
           {showReviews ? "접기" : "더보기"}

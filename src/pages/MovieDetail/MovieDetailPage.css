@@ -89,6 +89,14 @@ h1 {
   color: black;
 }
 
+.custom-modal .modal-body {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 10; /* 필요에 따라 패딩 제거 */
+  height: 100%; /* 모달의 전체 높이를 사용 */
+}
+
 /* 반응형 */
 @media screen and (max-width: 45rem) {
   .detail-poster {
