@@ -3,16 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./MoviePage.css";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovie";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import {
-  Alert,
-  Col,
-  Container,
-  Row,
-  Spinner,
-  ButtonGroup,
-  Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
+import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 
@@ -22,9 +13,11 @@ import ReactPaginate from "react-paginate";
 
 const MoviePage = () => {
   const navigate = useNavigate();
+  const sortList = ["인기 높은 순", "인기 낮은 순", "최신 순", "제목 순"];
 
   const [query /*setQuery*/] = useSearchParams(); // url에 있는 q 읽어오기
   const [page, setPage] = useState(1);
+  const [sort, setSort] = useState("인기 높은 순");
 
   const keyword = query.get("q");
 
@@ -38,10 +31,38 @@ const MoviePage = () => {
     setPage(selected + 1);
   };
 
+  // 정렬 handler
+  const handleSort = (event) => {
+    setSort(event.target.value);
+    setPage(1);
+  };
+
   // 검색을 다시하면 페이지가 1로
   useEffect(() => {
     setPage(1);
   }, [keyword]);
+
+  // 영화 정렬 (gpt의 도움,,)
+  const sortMovies = (movies) => {
+    if (!movies) return []; // movies가 undefined일 경우 빈 배열 반환
+    switch (sort) {
+      case "인기 높은 순":
+        return [...movies].sort((a, b) => b.popularity - a.popularity);
+      case "인기 낮은 순":
+        return [...movies].sort((a, b) => a.popularity - b.popularity);
+      case "최신 순":
+        return [...movies].sort(
+          (a, b) => new Date(b.release_date) - new Date(a.release_date)
+        );
+      case "제목 순":
+        return [...movies].sort((a, b) => a.title.localeCompare(b.title));
+      default:
+        return movies;
+    }
+  };
+
+  // 정렬된 영화 데이터들
+  const sortedMovies = sortMovies(data?.results);
 
   if (isLoading) {
     // 로딩스피너
@@ -60,7 +81,7 @@ const MoviePage = () => {
     return <Alert variant="danger">{error.message}</Alert>;
   }
 
-  if (data?.results.length === 0) {
+  if (!data || !data.results || data?.results.length === 0) {
     // 검색 결과가 없는 경우
     return (
       <Container>
@@ -80,22 +101,23 @@ const MoviePage = () => {
     <Container>
       <Row>
         <Col xs={12} lg={4}>
-          <DropdownButton
-            as={ButtonGroup}
-            key={"Secondary"}
-            id={`dropdown-variants-${"Secondary"}`}
-            //variant={"Secondary".toLowerCase()}
-            title={"정렬"}
-            className="dropdown-sort"
-          >
-            <Dropdown.Item eventKey="1">인기 높은 순</Dropdown.Item>
-            <Dropdown.Item eventKey="2">인기 낮은 순</Dropdown.Item>
-          </DropdownButton>
+          <Row>
+            {/* 장르 선택 */}
+
+            {/* 정렬 선택 */}
+            <select onChange={handleSort} value={sort} className="select-sort">
+              {sortList.map((selectItem, index) => (
+                <option key={index} value={selectItem}>
+                  {selectItem}
+                </option>
+              ))}
+            </select>
+          </Row>
         </Col>
 
         <Col xs={12} lg={8}>
           <Row>
-            {data?.results.map((movie, index) => (
+            {sortedMovies?.map((movie, index) => (
               <Col key={index} xs={6} sm={4}>
                 <MovieCard movie={movie} />
               </Col>
@@ -103,12 +125,12 @@ const MoviePage = () => {
           </Row>
 
           <ReactPaginate
-            nextLabel="next >"
+            nextLabel=">"
             onPageChange={handlePageClick}
             pageRangeDisplayed={2}
             marginPagesDisplayed={2}
             pageCount={data?.total_pages} // 전체페이지
-            previousLabel="< previous"
+            previousLabel="<"
             pageClassName="page-item"
             pageLinkClassName="page-link"
             previousClassName="page-item"
