@@ -2,16 +2,20 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
-const fetchSearchMovie = ({ keyword, page }) => {
+const fetchSearchMovie = ({ keyword, page, genre }) => {
   return keyword
-    ? api.get(`/search/movie?query=${keyword}&page=${page}`)
-    : api.get(`/movie/popular?page=${page}`); // baseURL 제외
+    ? api.get(
+        `/search/movie?query=${keyword}&page=${page}${
+          genre ? `&genre=${genre}` : ""
+        }`
+      )
+    : api.get(`/movie/popular?page=${page}${genre ? `&genre=${genre}` : ""}`); // baseURL 제외
 };
 
-export const useSearchMovieQuery = ({ keyword, page }) => {
+export const useSearchMovieQuery = ({ keyword, page, genre }) => {
   return useQuery({
-    queryKey: ["movie-search", { keyword, page }],
-    queryFn: () => fetchSearchMovie({ keyword, page }),
+    queryKey: ["movie-search", { keyword, page, genre }],
+    queryFn: () => fetchSearchMovie({ keyword, page, genre }),
     select: (result) => result.data, // data만 가져오기
   });
 };
