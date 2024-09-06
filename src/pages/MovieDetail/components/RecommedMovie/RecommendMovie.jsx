@@ -15,7 +15,7 @@ const RecommendMovie = () => {
       <div className="container">
         <Spinner
           animation="border"
-          variant="danger"
+          variant="info"
           style={{ width: "3rem", height: "3rem" }}
         />
       </div>
@@ -28,7 +28,7 @@ const RecommendMovie = () => {
 
   return (
     <div>
-      <h1 style={{ marginLeft: "20px" }}>추천 영화</h1>
+      <h1 style={{ marginLeft: "20px", color: "rgb(61, 183, 204)" }}>추천작</h1>
       <Container>
         <Row>
           {data?.results.slice(0, 6).map((movie, index) => (

@@ -22,7 +22,7 @@ const DetailReview = () => {
       <div className="container">
         <Spinner
           animation="border"
-          variant="danger"
+          variant="info"
           style={{ width: "3rem", height: "3rem" }}
         />
       </div>
