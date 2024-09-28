@@ -1,6 +1,6 @@
 
-# 🧸Jellycat 홈페이지🐰
-![image](https://github.com/user-attachments/assets/c53c5ca5-f1cb-4e0d-8f7d-2f537bbfae1a)
+# 🧸Disney+ 홈페이지🐰
+![image](https://github.com/user-attachments/assets/fd498823-6244-43a7-bb43-fc76ee1f28cf)
 - 배포 URL : https://movies-suki.netlify.app/
 - Open API : https://www.themoviedb.org/?language=ko
 - UI, Image 참고: Disney+ 홈페이지 (https://www.disneyplus.com/ko-kr)
@@ -13,14 +13,27 @@
 |--|--|
 |![image](https://github.com/user-attachments/assets/39208c6c-729e-4cc9-a9dc-531ece519281)|![image](https://github.com/user-attachments/assets/3b1caf4b-943c-47f9-a473-9beee2458d71)|
 
-|영화 페이지|검색&필터링 결과|
+|영화 페이지|"Marvel"검색&"Action"필터링 결과|
 |--|--|
 |![image](https://github.com/user-attachments/assets/a5554c03-1818-4483-9d28-01fbe453f902)|![image](https://github.com/user-attachments/assets/dc8ec656-4af6-4fd5-a20f-c8c19d23a2d9)|
 
 ## 🔥 주요 기능
-- **메인페이지 Carousel**
-	- 인기도 Top10, 최신작 Top10, 
-	- ㅁㅁ
+- **메인페이지**
+	- Banner에 인기도 Top5 영화가 슬라이드로 표시.
+	- Carousel을 통해 인기도 Top10, 최신작 Top10, 평점 Top10 영화 조회 가능. 
+- **영화상세 페이지**
+  	- 제목, 개봉일, 장르, 연령, 줄거리, 런타임, 평점 조회 가능.
+  	- "예고편" 버튼 클릭 시 YouTube 영상 실행.
+  	- 해당 영화와 비슷한 추천작 6개.
+  	- 영화에 남긴 유명인들의 리뷰들 조회 가능.
+- **영화 페이지**
+	- 영화 제목으로 검색 가능.
+ 	- 장르별 필터링 가능 (버튼형식)
+  	- 인기 높은 순, 인기 낮은 순, 최신 순, 가나다 순으로 정렬 가능.
+- **시리즈 페이지**
+  	- 추가 예정
+- **관심콘텐츠 페이지**
+  	- 추가 예정
 
 ## ⚙️ 개발 환경
 **Environment**<br/>
