@@ -1,5 +1,5 @@
 
-# 🧸Disney+ 홈페이지🐰
+# 🎬영화 추천, 검색 서비스🍿
 ![image](https://github.com/user-attachments/assets/fd498823-6244-43a7-bb43-fc76ee1f28cf)
 - 배포 URL : https://movies-suki.netlify.app/
 - Open API : https://www.themoviedb.org/?language=ko
