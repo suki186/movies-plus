@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
 const fetchMovieDetail = (id) => {
-  return api.get(`/movie/${id}`); // baseURL 제외
+  return api.get(`/movie/${id}?language=ko-KR`); // baseURL 제외
 };
 
 export const useMovieDetailQuery = ({ id }) => {

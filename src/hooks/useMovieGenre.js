@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
 const fetchMovieGenre = () => {
-  return api.get(`/genre/movie/list`); // baseURL 제외
+  return api.get(`/genre/movie/list?language=ko-KR`); // baseURL 제외
 };
 
 export const useMovieGenreQuery = () => {

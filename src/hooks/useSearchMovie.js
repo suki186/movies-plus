@@ -7,9 +7,13 @@ const fetchSearchMovie = ({ keyword, page, genre }) => {
     ? api.get(
         `/search/movie?query=${keyword}&page=${page}${
           genre ? `&genre=${genre}` : ""
-        }`
+        }&language=ko-KR`
       )
-    : api.get(`/movie/popular?page=${page}${genre ? `&genre=${genre}` : ""}`); // baseURL 제외
+    : api.get(
+        `/movie/popular?page=${page}${
+          genre ? `&genre=${genre}` : ""
+        }&language=ko-KR`
+      ); // baseURL 제외
 };
 
 export const useSearchMovieQuery = ({ keyword, page, genre }) => {

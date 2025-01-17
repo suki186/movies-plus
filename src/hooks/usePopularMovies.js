@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
 const fetchPopularMovies = () => {
-  return api.get(`/movie/popular`); // baseURL 제외
+  return api.get(`/movie/popular?language=ko-KR`); // baseURL 제외
 };
 
 export const usePopularMoviesQuery = () => {

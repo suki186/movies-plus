@@ -7,9 +7,9 @@ import UpcomingMovieSlide from "./components/UpcomigMovieSlide/UpcomingMovieSlid
 
 //1. 배너
 //2. 인기있는 영화
-//3. 평점 좋은 영화
-//4. 곧 나올 영화
-//5. 추천 영화
+//3. 곧 나올 영화
+//4. 평점 좋은 영화
+//5. 인기있는 시리즈
 
 const Homepage = () => {
   return (
