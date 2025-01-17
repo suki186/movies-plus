@@ -1,70 +1,47 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🎬영화 추천, 검색 서비스🍿
+![image](https://github.com/user-attachments/assets/fd498823-6244-43a7-bb43-fc76ee1f28cf)
+- 배포 URL : https://movies-suki.netlify.app/
+- Open API : https://www.themoviedb.org/?language=ko
+- UI, Image 참고: Disney+ 홈페이지 (https://www.disneyplus.com/ko-kr)
 
-## Available Scripts
+## 🖥️ 프로젝트 소개
+디즈니, 픽사, 마블, 스타워즈 등의 다양한 콘텐츠를 즐길 수 있는 "Disney+" OTT 서비스 오마주 작품입니다.
 
-In the project directory, you can run:
+## 📺 화면 구성
+|메인페이지|영화상세 페이지|
+|--|--|
+|![image](https://github.com/user-attachments/assets/39208c6c-729e-4cc9-a9dc-531ece519281)|![image](https://github.com/user-attachments/assets/3b1caf4b-943c-47f9-a473-9beee2458d71)|
 
-### `npm start`
+|영화 페이지|"Marvel"검색&"Action"필터링 결과|
+|--|--|
+|![image](https://github.com/user-attachments/assets/a5554c03-1818-4483-9d28-01fbe453f902)|![image](https://github.com/user-attachments/assets/dc8ec656-4af6-4fd5-a20f-c8c19d23a2d9)|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔥 주요 기능
+- **메인페이지**
+	- Banner에 인기도 Top5 영화가 슬라이드로 표시.
+	- Carousel을 통해 인기도 Top10, 최신작 Top10, 평점 Top10 영화 조회 가능. 
+- **영화상세 페이지**
+  	- 제목, 개봉일, 장르, 연령, 줄거리, 런타임, 평점 조회 가능.
+  	- "예고편" 버튼 클릭 시 YouTube 영상 실행.
+  	- 해당 영화와 비슷한 추천작 6개.
+  	- 영화에 남긴 유명인들의 리뷰들 조회 가능.
+- **영화 페이지**
+	- 영화 제목으로 검색 가능.
+ 	- 장르별 필터링 가능 (버튼형식)
+  	- 인기 높은 순, 인기 낮은 순, 최신 순, 가나다 순으로 정렬 가능.
+- **시리즈 페이지**
+  	- 추가 예정
+- **관심콘텐츠 페이지**
+  	- 추가 예정
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ 개발 환경
+**Environment**<br/>
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) 
 
-### `npm test`
+**Config**<br/>
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Development**<br/>
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)<br/>
+![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
